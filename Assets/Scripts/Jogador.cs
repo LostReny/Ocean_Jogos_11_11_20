@@ -17,7 +17,8 @@ public class Jogador : MonoBehaviour
     {
         //Input Vertical - 0 quando não está apertado - -1 para baixo - 1 para cima
         var vertical = Input.GetAxis("Vertical");
+        var horizontal = Input.GetAxis("Horizontal");
 
-        transform.Translate(Vector2.up * vertical * velocidade * Time.deltaTime);
+        transform.Translate(new Vector2(horizontal, vertical) * velocidade * Time.deltaTime);
     }
 }
